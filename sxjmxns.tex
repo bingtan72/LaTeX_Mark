@@ -1,0 +1,263 @@
+\documentclass[12pt]{ctexart}
+\usepackage[a4paper,left=.5cm,right=3.5cm, bottom=2.5cm,top=1.5cm]{geometry}
+\usepackage[listings,theorems]{tcolorbox}
+\usepackage{graphicx}
+\usepackage{ebgaramond}
+\usepackage{amssymb}
+%不显示页眉
+\pagestyle {plain}
+\usepackage{color}
+\usepackage{microtype}
+%更好的用于罗列环境
+\usepackage{titlesec}
+%三线表
+\usepackage{booktabs}
+%表格
+\usepackage{array}
+% multirow 支持在表格中跨行
+\usepackage{multirow}
+%表格背景颜色宏包
+\usepackage{colortbl}
+%颜色表格宏包
+\usepackage{xcolor}
+%跨行表格宏包
+\usepackage{bigstrut}
+%长表格
+\usepackage{longtable}
+\usepackage{amsmath}
+\graphicspath{{figures/}}
+%\usepackage{mathpazo}
+\usepackage{bm}
+\usepackage{tikz}
+%\usepackage[space,UTF8]{ctex}
+
+\definecolor{tcolor}{RGB}{255,127,  0} % default: 0,124,53
+\definecolor{lcolor}{RGB}{255,178,102} % default: 153,255,153
+\definecolor{pcolor}{RGB}{251,204,231} % default: 216,255,216
+
+\newcommand{\elegantpar}[2]{%
+	\textcolor{tcolor}{$\bm\langle{}\!{}$#1${}\!{}\bm\rangle$}%
+	\begin{tikzpicture}[remember picture, baseline=-0.75ex]%
+	\node[coordinate] (inText) {};%
+	\end{tikzpicture}%
+	\marginpar{%
+		\renewcommand{\baselinestretch}{1.0}%
+		\begin{tikzpicture}[remember picture]%
+		\draw node[fill= pcolor, rounded corners,text width=\marginparwidth] (inNote){\footnotesize#2};%
+		\end{tikzpicture}%
+	}%
+	\begin{tikzpicture}[remember picture, overlay]%
+	\draw[draw = lcolor, thick]
+	([yshift=-0.55em] inText)
+	-| ([xshift=-0.55em] inNote.west)
+	-| (inNote.west);%
+	\end{tikzpicture}%
+}
+
+\setlength{\marginparwidth}{2.5cm}
+
+%%%%%%%%%%%%%55%%
+\usepackage{xeboiboites}
+\usepackage[verbose]{hyperref}
+\hypersetup{ 
+	hidelinks
+}
+\setlength{\XeTeXLinkMargin}{-1pt}
+%%%
+\newboxedtheorem[
+small box style={fill=gray!20,draw=black, rounded corners},
+big box style={fill=gray!10,draw=orange,thick,rounded corners},
+headfont=\bfseries,
+thcounter=section]{propbof}{Proposition}{compteurPROP}
+
+\newbreakabletheorem[small box style={draw=orange,fill=blue!20},
+big box style={fill=blue!10,draw=orange}]
+{propc}{Proposition}{somecounter}
+
+\newboxedtheorem[small box style={fill=blue!20,draw=black, 
+	rounded corners},
+big box style={fill=blue!10,draw=orange,thick,rounded corners},
+headfont=\bfseries]%
+{proposition}{Proposition}{somecounter}    
+
+\newboxedtheorem[small box style={fill=blue!20,draw=black, line width=.7pt,
+	decoration={penciline},decorate},%
+big box style={fill=blue!10,draw=black,thick, 
+	decoration={penciline},decorate},
+headfont=\bfseries]%
+{propb}{Proposition}{}
+
+
+\newboxedequation[big box style={fill=blue!10,%
+	thick,decoration=penciline,decorate}]%
+{formula}      
+
+
+
+\newbreakabletheorem[small box style={draw=orange,fill=blue!20},
+big box style={fill=blue!10,draw=orange},
+broken edges={decoration=zigzag}]
+{propd}{proposition}{test}    
+
+\newbreakabletheorem[small box style={draw=orange!30!black!20,%
+	fill=orange!10!black!2,decoration=penciline, decorate, thick},
+big box style={color=orange!30!black!20,fill=orange!30!black!10,thick},
+broken edges={draw=orange!30!black!20,thick,fill=orange!20!black!5, 
+	decoration={random steps, segment length=.5cm,%
+		amplitude=1.3mm},decorate},%
+other edges={decoration=penciline,decorate,thick}]%
+{parchment}{Parchment}{test}    
+
+\newparchment[small box style={draw=orange!30!black!20,%
+	fill=orange!10!black!2,decoration=penciline, decorate, thick},
+big box style={color=orange!30!black!20,fill=orange!30!black!10,thick},
+broken edges={draw=orange!30!black!20,thick,fill=orange!20!black!5, 
+	decoration={random steps, segment length=.4cm,%
+		amplitude=1.7mm},decorate},%
+other edges={decoration=penciline,decorate,thick}]%
+{parchmentb}{Parchment}{}     
+
+\newspanning[image=dessins/bulb,headfont=\bfseries,%
+spanning style={very thick,decoration=penciline,decorate}]%
+{method}{Method}{}
+
+\newspanning[image=dessins/poisson,headfont=\itshape,%
+spanning style={very thick,decoration=penciline,decorate}]%
+{test}{Test}{}
+
+%%%%%%%%%%%%%%%%%%
+\title{2017数学建模校内赛计划拟定方案}
+\author{数理协会}
+\date{\today}
+\begin{document}
+\maketitle
+\textbf{2017西南石油大学数学建模校内赛由理学院主办，科学与工程中心承办，数理协会和校学生会协办的面向全校大学生的校级竞赛。}
+
+\section{具体安排}
+
+\textbf{办公室：}主要负责校内赛报名表的收集与整理，工作明细如下：
+%\begin{tcolorbox}[colback=orange!5,colframe=orange!75!black]
+%\end{tcolorbox}
+%\begin{proposition}[办公室]
+%\end{proposition}
+\begin{enumerate}
+	\item \textbf{建立数学建模校内赛报名QQ群（1000人群）}
+	
+	群号：待通知
+	
+	群名：\elegantpar{SWPUMCM2017}{Southwest Petroleum University Mathematical Contest in Modeling}
+	
+	备注格式：队号特长姓名（例如：001编程谭兵）
+	\item \textbf{负责每天报名信息的汇总收集，并回复报名同学队伍编号，回复格式如下（邮箱和短信）：}
+	
+	同学您好，您已成功报名西南石油大学2017数学建模校内赛，您的队伍编号为：006，请通知队员加校内赛群：12345678（SWPUMCM2017），进群请按要求修改备注，备注格式：队号特长姓名（例如：001编程谭兵），届时我们会在QQ群中公布赛题和参赛注意事项，请务必加入。谢谢，祝生活愉快！
+	
+	\item \textbf{每三天汇报一次报名队伍总数，发在我们部长群里，我们好及时调整宣传力度，切记}
+\end{enumerate}
+---------------------------------------------
+---------------------------------------------
+-------------------------------------
+
+\textbf{数理部：}主要负责奖状的申请制作和LED屏申请
+
+\begin{enumerate}
+	\item 完成社团活动申请审批表（A表），社团活动计划表（D表）的填写
+	\item \textbf{此次申请校级奖状的章为}：\elegantpar{“西南石油大学”校章}{关于:“西南石油大学”校章的申请详见附件1}
+	
+	设计奖状模板，届时联系单位打印；
+	
+	每次盖校章需要填报用章申请单（“非正式公文用印申请单”），申请单需学院领导签字和加盖学院公章
+	
+	持证书和申请单到导学楼（行政办公楼）601室办理盖章。
+\item \textbf{LED屏的申请}
+
+\elegantpar{LED屏的申请}{申请文件详见附件2}
+\end{enumerate}
+
+---------------------------------------------
+---------------------------------------------
+-----------------------------
+
+\textbf{活动小组：}主要负责活动策划和横幅申请
+
+\begin{enumerate}
+\item \textbf{活动策划按时完成，上交社团联}
+
+\item \textbf{负责申请横幅和场地}
+
+横幅找理学院申请制作
+
+\elegantpar{填写横幅宣传审批表（博学楼、一食堂各一份），按时上交}{申请表详见附件3}
+
+横幅内容：
+\begin{center}
+\textbf{预祝2017年西南石油大学数学建模竞赛圆满成功}
+
+\hspace{100pt}\textbf{数理协会、校学生会宣}
+\end{center}
+\end{enumerate}
+
+---------------------------------------------
+---------------------------------------------
+-----------------------------
+
+\textbf{宣采部：}主要负责海报的制作和海报场地的申请工作
+
+\begin{enumerate}
+	\item 海报的制作特别重要，可以和理学院团宣部一起合作完成
+	
+	\item 海报做好后，填写\elegantpar{六个申请表}{申请表文件详见附件4}，六个申请表分别是：四大名楼，思学楼和博学楼。就是海报张贴申请哈，申请步骤见附件4
+	
+	\item 再填写两个展板申请表（思学楼和博学楼各一份，四大名楼就不放展板了，没这么多展板），文件也是附件4
+\end{enumerate}
+
+---------------------------------------------
+---------------------------------------------
+-----------------------------
+
+\textbf{财务部：}做好活动预算，理学院报账
+\begin{enumerate}
+\item \textbf{主要负责后期的报账}，向理学院报账，比如海报，横幅，奖状等
+\item 协助其他部门完成宣传工作
+\end{enumerate}
+
+---------------------------------------------
+---------------------------------------------
+-----------------------------
+
+\textbf{编辑部：}《理学报》的编辑与发行
+\begin{enumerate}
+	\item \textbf{负责活动期间的摄影工作}，例如六大楼的海报张贴拍照留存，还有思学楼和博学楼的横幅
+	
+	\textbf{要求：}海报张贴后请用拍照工具将海报拍下来，要求照片上能够辨认海报内容和张贴海报的地点并标注时间
+	\item 报名开始和结束要写新闻稿，新闻稿及时发给谭兵，切记
+\end{enumerate}
+
+\section{现场宣传}
+\begin{proposition}[发传单宣传]
+
+考虑到现场报名和邮箱报名容易混乱，也给我们工作人员减轻工作量，所以数理协会主席团一致商量决定\textbf{取消现场报名}，改为\textbf{发传单宣传}，传单内容尽量与海报内容一致
+\end{proposition}
+
+发传单拟定于4月26-28日，发传单顺序待确定后再通知部长们（PS：注意4月20日有场讲座，\textbf{可将校内赛报名信息也一并写在讲座下面（\textcolor{red}{$\bigstar\bigstar\bigstar$宣采部注意$\bigstar\bigstar\bigstar$}）}。也就是既要宣传我们讲座，同时也要提一下校内赛报名的事情）
+\section{宣传注意事项}
+\textbf{4月17（周一）到4月30日是我们宣传时间，根据报名队伍数多少要及时调整宣传策略，主要宣传措施分为线上和线下宣传}
+
+\begin{enumerate}
+\item 线下宣传主要就是拟定于4月26-28日的发传单，每个部门发一次传单
+\item \textbf{线下宣传分为QQ群、QQ空间、网站、微信公众号和微博等平台，线下宣传务必要重视}
+\end{enumerate}
+
+\begin{proposition}[线下宣传]
+\begin{enumerate}
+	\item QQ群的宣传很重要，联系各年级辅导员（主要还是大二和大三），在班级QQ群里做好宣传
+	\item 此外，理学院上数学课的老师们也会在数学课和建模选修课上和我们一起宣传
+	\item QQ空间的宣传，这个由谭兵编辑校内赛报名宣传说说，大家积极转发，扩散出去，让更多的人知道
+	\item 田老师也会在教务处网站、理学院网站，科学与工程计算中心网站等发出报名通知，这部分不用我们操心，可忽略
+	\item 微信公账号的话可联系西南石油大学官方微信，西南石油大学学生会，西南石油大学社团联，石大青听，石大青年，西柚小石头等微信公众平台，帮推我们校内赛的报名通知，此事由\textcolor{red}{$\bigstar\bigstar$编辑部$\bigstar\bigstar$}去负责联系
+	\item 此外，数理部要及时更新我们的微博，然后要扩散出去，让我们学校一些有影响力的微博也转发出去（可以和这些微博私聊，然后态度好一点哈，说明情况）
+%	\item 总之，我们只有一个目的，就是让全校的同学乃至大一的新生都知道数学建模校内赛，让更多的人参与进来，为九月份的国赛储备人才，在九月份的国赛中我们学校能取得一个更好的成绩，上一个新的台阶。
+\end{enumerate}
+\end{proposition}
+
+\end{document}
